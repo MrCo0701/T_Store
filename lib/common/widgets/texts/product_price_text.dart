@@ -17,7 +17,7 @@ class TProductPriceText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('\$35.5',
+    return Text('\$' + price,
         maxLines: maxLines,
         overflow: TextOverflow.ellipsis,
         style: isLarge

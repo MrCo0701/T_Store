@@ -12,7 +12,7 @@ class TCurvedEdgeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
+    return ClipPath( // * ==> Cat 1 widget theo y muon
         clipper: TCustomCurvedEdges(),
         child: child
     );

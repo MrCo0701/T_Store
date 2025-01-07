@@ -59,7 +59,8 @@ dev_dependencies:
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
   connectivity_plus: ^6.0.3
-  lottie: ^3.1.0cupertino_icons: ^1.0.6
+  lottie: ^3.1.0
+  cupertino_icons: ^1.0.6
 
   # State Management
   get: ^4.6.6
@@ -92,6 +93,7 @@ flutter:
      - assets/icons/categories/
      - assets/images/banners/
      - assets/images/products/
+     - assets/images/content/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
