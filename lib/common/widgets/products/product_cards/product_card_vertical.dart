@@ -45,17 +45,20 @@ class TProductCardVertical extends StatelessWidget {
                       imageUrl: TImages.productImage1, applyImageRadius: true),
 
                   // * Sale Tag
-                  TRoundedContainer(
-                    radius: TSizes.sm,
-                    backgroundColor: TColors.secondary.withOpacity(0.8),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: TSizes.sm, vertical: TSizes.xs),
-                    child: Text(
-                      '25%',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge
-                          ?.apply(color: TColors.black),
+                  Positioned(
+                    top: 12,
+                    child: TRoundedContainer(
+                      radius: TSizes.sm,
+                      backgroundColor: TColors.secondary.withOpacity(0.8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: TSizes.sm, vertical: TSizes.xs),
+                      child: Text(
+                        '25%',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge
+                            ?.apply(color: TColors.black),
+                      ),
                     ),
                   ),
 
