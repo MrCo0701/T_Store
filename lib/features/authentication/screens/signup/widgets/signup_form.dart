@@ -1,8 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:t_store/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:t_store/utils/validators/validation.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
@@ -15,13 +19,16 @@ class TSignupForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    
+    final controller = Get.put(SignupController());
+
     return Form(
+        key: controller.signupFormKey,
         child: Column(children: [
           Row(
             children: [
               Expanded(
                 child: TextFormField(
+                  controller: controller.firstName,
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.firstName,
@@ -31,6 +38,7 @@ class TSignupForm extends StatelessWidget {
               const SizedBox(width: TSizes.spaceBtwInputFields),
               Expanded(
                 child: TextFormField(
+                  controller: controller.lastName,
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.lastName,
@@ -43,6 +51,7 @@ class TSignupForm extends StatelessWidget {
 
           // * User Name
           TextFormField(
+            controller: controller.userName,
             decoration: const InputDecoration(
                 labelText: TTexts.username,
                 prefixIcon: Icon(Iconsax.user_edit)),
@@ -51,6 +60,8 @@ class TSignupForm extends StatelessWidget {
 
           //* Email
           TextFormField(
+            validator: (value) => TValidator.validateEmail(value),
+            controller: controller.email,
             decoration: const InputDecoration(
                 labelText: TTexts.email,
                 prefixIcon: Icon(Iconsax.direct)),
@@ -59,6 +70,8 @@ class TSignupForm extends StatelessWidget {
 
           //* Phone Number
           TextFormField(
+            validator: (value) => TValidator.validatePhoneNumber(value),
+            controller: controller.phoneNumber,
             decoration: const InputDecoration(
                 labelText: TTexts.phoneNo,
                 prefixIcon: Icon(Iconsax.call)),
@@ -66,11 +79,21 @@ class TSignupForm extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           //* Password
-          TextFormField(
-            decoration: const InputDecoration(
+          Obx(
+            () => TextFormField(
+              validator: (value) => TValidator.validatePassword(value),
+              controller: controller.password,
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
                 labelText: TTexts.password,
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash)),
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed: () => controller.hidePassword.value =
+                      !controller.hidePassword.value,
+                  icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                ),
+              ),
+            ),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -81,7 +104,7 @@ class TSignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => controller.signup(),
                 child: const Text(TTexts.createAccount)),
           )
         ]));
