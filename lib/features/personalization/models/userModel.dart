@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:t_store/utils/formatters/formatter.dart';
+import 'package:t_store/utils/popups/loaders.dart';
 
 class UserModel {
   final String id;
@@ -63,12 +64,12 @@ class UserModel {
       final data = document.data();
       return UserModel(
         id: document.id,
-        firstName: data!['FirstName'] ?? '',
-        lastName: data['LastName'] ?? '',
-        userName: data['UserName'] ?? '',
-        email: data['Email'] ?? '',
-        phoneNumber: data['PhoneNumber'] ?? '',
-        profilePicture: data['ProfilePicture'] ?? '',
+        firstName: data!['firstName'] ?? '',
+        lastName: data['lastName'] ?? '',
+        userName: data['userName'] ?? '',
+        email: data['email'] ?? '',
+        phoneNumber: data['phoneNumber'] ?? '',
+        profilePicture: data['profilePicture'] ?? '',
       );
     }
     return UserModel(

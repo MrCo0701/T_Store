@@ -35,7 +35,12 @@ class TProfileMenu extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
                 overflow: TextOverflow.ellipsis,
               )),
-          Expanded(child: Icon(icon, size: 18))
+          Expanded(
+            child: GestureDetector(
+              onTap: onPressed,
+              child: Icon(icon, size: 18),
+            ),
+          )
         ],
       ),
     );

@@ -5,6 +5,12 @@ import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:t_store/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/data/dummy_data/dummy_data.dart';
+import 'package:t_store/data/repositories/banners/banner_repository.dart';
+import 'package:t_store/data/repositories/categories/category_repository.dart';
+import 'package:t_store/data/repositories/product/product_repository.dart';
+import 'package:t_store/features/authentication/controllers/login/login_controller.dart';
+import 'package:t_store/features/authentication/screens/login/login.dart';
 import 'package:t_store/features/personalization/screens/address/address.dart';
 import 'package:t_store/features/personalization/screens/profile/profile.dart';
 import 'package:t_store/features/shop/screens/order/order.dart';
@@ -18,6 +24,9 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+    final productRepository = Get.put(CategoryRepository());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -110,10 +119,11 @@ class SettingsScreen extends StatelessWidget {
                     title: 'App Settings', showActionButton: false),
                 const SizedBox(height: TSizes.spaceBtwItems),
 
-                const TSettingsMenuTile(
+                TSettingsMenuTile(
                   icon: Iconsax.document_upload,
                   title: 'Load data',
                   subtitle: 'Upload Data to your Cloud Firebase',
+                  onTap: () => productRepository.uploadDummyData(DummyData.categories),
                 ),
                 TSettingsMenuTile(
                   icon: Iconsax.location,
@@ -139,7 +149,7 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.logout(),
                     child: const Text('Logout'),
                   ),
                 ),

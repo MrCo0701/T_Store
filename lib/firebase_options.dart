@@ -41,34 +41,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDHqHo5GxcDfGndu08J3OtIty1s4j1vFgs',
-    appId: '1:602486709132:web:9d6c41daf03ff2169714a9',
-    messagingSenderId: '602486709132',
-    projectId: 'imagesignup-a2764',
-    authDomain: 'imagesignup-a2764.firebaseapp.com',
-    databaseURL: 'https://imagesignup-a2764-default-rtdb.firebaseio.com',
-    storageBucket: 'imagesignup-a2764.appspot.com',
-    measurementId: 'G-13W0DNF6FK',
+    apiKey: 'AIzaSyAgdkRKwClC2HLFNagGz3vIC5M8zwHFoKQ',
+    appId: '1:634048616620:web:39b18905d9b9bdea182709',
+    messagingSenderId: '634048616620',
+    projectId: 't-store-594c3',
+    authDomain: 't-store-594c3.firebaseapp.com',
+    storageBucket: 't-store-594c3.firebasestorage.app',
+    measurementId: 'G-GNY3PZR5JP',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCXP2Kom5O9vhJPe51EqGi51yi6Ea7Yjcc',
-    appId: '1:602486709132:android:ce652fa9b387ab9c9714a9',
-    messagingSenderId: '602486709132',
-    projectId: 'imagesignup-a2764',
-    databaseURL: 'https://imagesignup-a2764-default-rtdb.firebaseio.com',
-    storageBucket: 'imagesignup-a2764.appspot.com',
+    apiKey: 'AIzaSyBvet0ULAA3Auubs26Qz9YrdV9zImUaGDo',
+    appId: '1:634048616620:android:775c8ebacae698d0182709',
+    messagingSenderId: '634048616620',
+    projectId: 't-store-594c3',
+    storageBucket: 't-store-594c3.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDLKIMiWq0nGahpQFNWcNi6OY3TokY9rg8',
-    appId: '1:602486709132:ios:09a37d75638a0baf9714a9',
-    messagingSenderId: '602486709132',
-    projectId: 'imagesignup-a2764',
-    databaseURL: 'https://imagesignup-a2764-default-rtdb.firebaseio.com',
-    storageBucket: 'imagesignup-a2764.appspot.com',
-    androidClientId: '602486709132-mk1o6dgv9ej3p37ld6u9e8e3iv8jr4qe.apps.googleusercontent.com',
-    iosClientId: '602486709132-60a7fegedpaqdh5uj2ut0h00kc8g15ag.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCZulnAfVKSKtGJwhI44kls2RJ5dFSj6QA',
+    appId: '1:634048616620:ios:a897a6f548eedba5182709',
+    messagingSenderId: '634048616620',
+    projectId: 't-store-594c3',
+    storageBucket: 't-store-594c3.firebasestorage.app',
     iosBundleId: 'com.example.tStore',
   );
 
@@ -85,14 +80,13 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDHqHo5GxcDfGndu08J3OtIty1s4j1vFgs',
-    appId: '1:602486709132:web:6e7bc11a3693144b9714a9',
-    messagingSenderId: '602486709132',
-    projectId: 'imagesignup-a2764',
-    authDomain: 'imagesignup-a2764.firebaseapp.com',
-    databaseURL: 'https://imagesignup-a2764-default-rtdb.firebaseio.com',
-    storageBucket: 'imagesignup-a2764.appspot.com',
-    measurementId: 'G-TRYFSVJTR5',
+    apiKey: 'AIzaSyAgdkRKwClC2HLFNagGz3vIC5M8zwHFoKQ',
+    appId: '1:634048616620:web:e08ea31bd6a9bee6182709',
+    messagingSenderId: '634048616620',
+    projectId: 't-store-594c3',
+    authDomain: 't-store-594c3.firebaseapp.com',
+    storageBucket: 't-store-594c3.firebasestorage.app',
+    measurementId: 'G-BNSDMT084Z',
   );
 
 }

@@ -6,6 +6,7 @@ import 'package:t_store/common/widgets/appbar/tabbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/controllers/category_controller.dart';
 import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -21,9 +22,10 @@ class Store extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final categories = CategoryController.instance.featuredCategories;
 
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
           title: Text(
@@ -84,27 +86,16 @@ class Store extends StatelessWidget {
                   ),
 
                   //* Tabs
-                  bottom: const TTabBar(
-                    tabs: [
-                      Tab(child: Text('Sports')),
-                      Tab(child: Text('Furniture')),
-                      Tab(child: Text('Electronics')),
-                      Tab(child: Text('Clothes')),
-                      Tab(child: Text('Cosmetics')),
-                    ],
-                  ))
+                bottom: TTabBar(
+                  tabs: categories.map((category) => Tab(child: Text(category.name))).toList(),
+                ),
+              )
             ];
           },
 
           //* Body
-          body: const TabBarView(
-            children: [
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-            ],
+          body: TabBarView(
+            children: categories.map((category) => TCategoryTab(category: category)).toList(),
           ),
         ),
       ),

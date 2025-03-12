@@ -1,52 +1,26 @@
 {
   "project_info": {
-    "project_number": "602486709132",
-    "firebase_url": "https://imagesignup-a2764-default-rtdb.firebaseio.com",
-    "project_id": "imagesignup-a2764",
-    "storage_bucket": "imagesignup-a2764.appspot.com"
+    "project_number": "634048616620",
+    "project_id": "t-store-594c3",
+    "storage_bucket": "t-store-594c3.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:602486709132:android:ce652fa9b387ab9c9714a9",
+        "mobilesdk_app_id": "1:634048616620:android:775c8ebacae698d0182709",
         "android_client_info": {
           "package_name": "com.example.t_store"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "602486709132-mk1o6dgv9ej3p37ld6u9e8e3iv8jr4qe.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.t_store",
-            "certificate_hash": "b6bc7a057160aebcd0e76c982124c887bbea0afe"
-          }
-        },
-        {
-          "client_id": "602486709132-6u2bi4bv9qs94s36afrmeln904hgelp2.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXP2Kom5O9vhJPe51EqGi51yi6Ea7Yjcc"
+          "current_key": "AIzaSyBvet0ULAA3Auubs26Qz9YrdV9zImUaGDo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "602486709132-6u2bi4bv9qs94s36afrmeln904hgelp2.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "602486709132-60a7fegedpaqdh5uj2ut0h00kc8g15ag.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.tStore"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

@@ -162,5 +162,10 @@ class TImages {
   static const String paystack = "assets/icons/payment_methods/paystack.png";
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+
+  // -- Lottie Animations
+  static String cartAnimation = "assets/images/animations/lady-adding-product-in-cart-animation.json";
+  static String successfulRegisterAnimation = "assets/images/animations/72462-check-register.json";
+  static String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
 }
 
