@@ -62,7 +62,7 @@ class VerifyEmailController extends GetxController {
     if (currentUser.emailVerified) {
       goToSuccessScreen.value = true;
     }else {
-      TLoaders.errorSnackBar(title: 'ngu');
+      TLoaders.warningSnackBar(title: 'Oh Snap', message: 'Check your email');
     }
   }
 }

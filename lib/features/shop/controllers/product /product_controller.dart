@@ -3,7 +3,7 @@ import 'package:t_store/data/repositories/product/product_repository.dart';
 import 'package:t_store/utils/enum/enum.dart';
 import 'package:t_store/utils/popups/loaders.dart';
 
-import '../models/product_model.dart';
+import '../../models/product_model.dart';
 
 class ProductController extends GetxController {
   static ProductController get instance => Get.find();
@@ -28,6 +28,16 @@ class ProductController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snaps!', message: e.toString());
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try  {
+      final products = await productRepository.getAllFeaturedProducts();
+      return products;
+    }catch(e)  {
+      TLoaders.errorSnackBar(title: 'Oh snap', message: e.toString());
+      return [];
     }
   }
 

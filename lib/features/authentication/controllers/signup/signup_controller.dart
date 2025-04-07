@@ -63,17 +63,16 @@ class SignupController extends GetxController {
         profilePicture: '',
       );
 
+      print("***** ID: ${userCredential.user!.uid}");
+
       final userRepository = Get.put(UserRepository());
       userRepository.saveUserRecord(newUser);
 
       // * Show success message
       TLoaders.successSnackBar(title: 'Congratulation', message: 'Your account has been created? Verify email to continue');
 
-      TLoaders.errorSnackBar(title: 'test');
-
       // * Move to Verify email
       goToVerifyScreen.value = true;
-
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {

@@ -59,22 +59,16 @@ class DummyData {
           ),
           ProductVariationModel(
             id: '3',
-            stock: 0,
+            stock: 12,
             price: 234,
             image: TImages.productImage23,
             attributeValues: {'Color': 'Black', 'Size': 'EU 34'},
           ),
           ProductVariationModel(
-            id: '4',
-            stock: 222,
-            price: 232,
-            image: TImages.productImage1,
-            attributeValues: {'Color': 'Green', 'Size': 'EU 32'},
-          ),
-          ProductVariationModel(
             id: '5',
-            stock: 0,
+            stock: 10,
             price: 334,
+            salePrice: 200,
             image: TImages.productImage21,
             attributeValues: {'Color': 'Red', 'Size': 'EU 34'},
           ),
@@ -82,7 +76,7 @@ class DummyData {
             id: '6',
             stock: 11,
             price: 332,
-            image: TImages.productImage21,
+            image: TImages.productImage9,
             attributeValues: {'Color': 'Red', 'Size': 'EU 32'},
           ),
         ],
@@ -140,8 +134,8 @@ class DummyData {
       title: 'Puma RS-X',
       stock: 25,
       price: 120,
-      isFeatured: false,
-      thumbnail: TImages.productImage3,
+        isFeatured: true,
+        thumbnail: TImages.productImage3,
       description: 'Stylish Puma RS-X sneakers for casual wear.',
       brand: BrandModel(
         id: '3',
@@ -233,8 +227,8 @@ class DummyData {
       title: 'Reebok Club C 85',
       stock: 12,
       price: 90,
-      isFeatured: false,
-      thumbnail: TImages.productImage5,
+        isFeatured: true,
+        thumbnail: TImages.productImage5,
       description: 'Timeless Reebok Club C 85 sneakers for a classic look.',
       brand: BrandModel(
         id: '5',
@@ -274,9 +268,86 @@ class DummyData {
       ],
         productType: 'ProductType.variable'
     ),
+    ProductModel(
+        id: '006',
+        title: 'Nike Air Max Plus',
+        stock: 10,
+        price: 500,
+        isFeatured: true,
+        thumbnail: 'assets/images/products/nike/air_max_plus/nike_plus_1.png',
+        description: 'Timeless Reebok Club C 85 sneakers for a classic look.',
+        brand: BrandModel(
+          id: '1',
+          image: TImages.nikeLogo,
+          name: 'Nike',
+          productsCount: 50,
+          isFeatured: true,
+        ),
+        images: [
+          'assets/images/products/nike/air_max_plus/nike_plus_1.png',
+          'assets/images/products/nike/air_max_plus/nike_plus_2.png',
+          'assets/images/products/nike/air_max_plus/nike_plus_3.png',
+          'assets/images/products/nike/air_max_plus/nike_plus_4.png',
+          'assets/images/products/nike/air_max_plus/nike_plus_5.png',
+          'assets/images/products/nike/air_max_plus/nike_plus_6.png',
+        ],
+        salePrice: 350,
+        sku: 'RBK85',
+        categoryId: '5',
+        productAttributes: [
+          ProductAttributeModel(name: 'Color', values: ['Black', 'Blue', 'Red', 'White', 'Yellow']),
+          ProductAttributeModel(name: 'Size', values: ['EU 41', 'EU 43']),
+        ],
+        productVariations: [
+          ProductVariationModel(
+            id: '1',
+            stock: 10,
+            price: 85,
+            salePrice: 75,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_1.png',
+            description:
+                'Let your attitude have the edge in the Air Max Plus. Its iconic caging adds heat to your look while airy mesh keeps you cool. And the visible cushioning lets you celebrate your defiant style in comfort.',
+            attributeValues: {'Color': 'White', 'Size': 'EU 41'},
+          ),
+          ProductVariationModel(
+            id: '2',
+            stock: 8,
+            price: 100,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_2.png',
+            attributeValues: {'Color': 'Yellow', 'Size': 'EU 43'},
+          ),
+          ProductVariationModel(
+            id: '3',
+            stock: 4,
+            price: 120,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_3.png',
+            attributeValues: {'Color': 'Black', 'Size': 'EU 43'},
+          ),
+          ProductVariationModel(
+            id: '4',
+            stock: 10,
+            price: 90,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_4.png',
+            attributeValues: {'Color': 'Blue', 'Size': 'EU 41'},
+          ),
+          ProductVariationModel(
+            id: '5',
+            stock: 30,
+            price: 200,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_5.png',
+            attributeValues: {'Color': 'Black', 'Size': 'EU 43'},
+          ),
+          ProductVariationModel(
+            id: '6',
+            stock: 30,
+            price: 200,
+            image: 'assets/images/products/nike/air_max_plus/nike_plus_6.png',
+            attributeValues: {'Color': 'White', 'Size': 'EU 41s'},
+          ),
+        ],
+        productType: 'ProductType.variable'),
   ];
 
-  // List of all Categories
   static final List<CategoryModel> categories = [
     CategoryModel(id: '1', image: TImages.sportIcon, name: 'Sports', isFeatured: true),
     CategoryModel(id: '2', image: TImages.furnitureIcon, name: 'Furniture', isFeatured: true),
@@ -301,5 +372,4 @@ class DummyData {
     CategoryModel(id: '15', image: TImages.electronicsIcon, name: 'Laptop', parentId: '2', isFeatured: false),
     CategoryModel(id: '16', image: TImages.electronicsIcon, name: 'Mobile', parentId: '2', isFeatured: false),
   ];
-
 }

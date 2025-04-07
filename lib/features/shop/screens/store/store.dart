@@ -5,8 +5,11 @@ import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/appbar/tabbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
+import 'package:t_store/common/widgets/shimmer/brand_shimmer.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/controllers/brand_controller.dart';
 import 'package:t_store/features/shop/controllers/category_controller.dart';
+import 'package:t_store/features/shop/screens/brand/brand_products.dart';
 import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -23,6 +26,7 @@ class Store extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     final categories = CategoryController.instance.featuredCategories;
+    final brandController = Get.put(BrandController());
 
     return DefaultTabController(
       length: categories.length,
@@ -73,15 +77,31 @@ class Store extends StatelessWidget {
                           height: TSizes.spaceBtwItems / 1.5,
                         ),
 
-                        TGridLayout(
+                      Obx(() {
+                        if (brandController.isLoading.value) return const TBrandShimmer();
+
+                        if (brandController.featuredBrands.isEmpty) {
+                          return Center(
+                              child: Text(
+                            'No Data Found!',
+                            style:
+                                Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),
+                          ));
+                        }
+
+                        return TGridLayout(
                             mainAxisExtent: 80,
-                            itemCount: 4,
+                            itemCount: brandController.featuredBrands.length,
                             itemBuilder: (_, index) {
-                              return const TBrandCard(
+                              final brand = brandController.featuredBrands[index];
+                              return TBrandCard(
                                 showBorder: true,
+                                brand: brand,
+                                onTap: () => Get.to(() => BrandProducts(brand: brand)),
                               );
-                            })
-                      ],
+                            });
+                      })
+                    ],
                     ),
                   ),
 

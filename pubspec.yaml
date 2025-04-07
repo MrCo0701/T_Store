@@ -54,6 +54,7 @@ dependencies:
   firebase_storage: ^11.7.7
   cached_network_image: ^3.4.0
   uuid: ^4.5.1
+  firebase_app_check: ^0.2.2+7 # ==> app beck for fix exception
 
 dev_dependencies:
   flutter_test:
@@ -100,6 +101,7 @@ flutter:
      - assets/icons/categories/
      - assets/images/banners/
      - assets/images/products/
+     - assets/images/products/nike/air_max_plus/
      - assets/images/content/
      - assets/icons/payment_methods/
 

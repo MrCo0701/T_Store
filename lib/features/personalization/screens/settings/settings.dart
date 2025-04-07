@@ -25,7 +25,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
-    final productRepository = Get.put(CategoryRepository());
+    final productRepository = Get.put(ProductRepository());
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -123,7 +123,7 @@ class SettingsScreen extends StatelessWidget {
                   icon: Iconsax.document_upload,
                   title: 'Load data',
                   subtitle: 'Upload Data to your Cloud Firebase',
-                  onTap: () => productRepository.uploadDummyData(DummyData.categories),
+                  onTap: () => productRepository.uploadDummyData(DummyData.products),
                 ),
                 TSettingsMenuTile(
                   icon: Iconsax.location,

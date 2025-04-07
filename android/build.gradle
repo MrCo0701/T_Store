@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0' // Phiên bản plugin tương thích với Gradle 7.4
+    }
+}
+
 allprojects {
     repositories {
         google()

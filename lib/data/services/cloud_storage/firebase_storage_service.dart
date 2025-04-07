@@ -13,7 +13,7 @@ class TFirebaseStorageService extends GetxController {
   Future<Uint8List> getImageDataFromAssets(String path) async {
     // * Read file in asset
     try {
-        final byteData = await rootBundle.load(path);
+      final byteData = await rootBundle.load(path);
       final imageData = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
       return imageData;
     } catch (e) {

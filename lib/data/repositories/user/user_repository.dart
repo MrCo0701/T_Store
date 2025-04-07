@@ -14,11 +14,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  final _db = FirebaseFirestore.instance;
 
   Future<void> saveUserRecord(UserModel user) async {
     try {
       await _db.collection("Users").doc(user.id).set(user.toJson());
+      TLoaders.successSnackBar(title: user.email);  
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch(_) {
