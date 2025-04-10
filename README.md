@@ -18,9 +18,9 @@ Smooth UI, fast performance, and a design that hits harder than your ex’s last
 
 ## 📸 Screenshots
 
-| Home | Product Details | Cart |
-|------|------------------|------|
-| ![Home](assets/screen/home.png) | ![Details](assets/screen/detail.png) | ![Cart](assets/screen/cart.png) |
+| Home | Product Details | Cart | Login |
+|------|------------------|------|------|
+| ![Home](assets/screen/home.png) | ![Details](assets/screen/detail.png) | ![Cart](assets/screen/cart.png) | ![Login](assets/screen/login.png) |
 
 > Put your screenshots in the `assets/screenshots/` folder and replace the filenames if needed.
 
