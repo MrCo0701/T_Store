@@ -1,17 +1,35 @@
-# t_store
+# 🧨 T-Store - Flutter Shoe Shopping App
 
-A new Flutter project.
+🔥 **T-Store** is a badass shoe shopping app built with **Flutter**. It’s not just about buying shoes — it’s about flexing style right at your fingertips.  
+Smooth UI, fast performance, and a design that hits harder than your ex’s last words.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- 🛒 Browse the hottest sneaker collections
+- 🔍 Search by brand, name, or category
+- ❤️ Add to favorites
+- 💸 Seamless checkout
+- 👤 User profile management
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter 💙 (Dart)
+- Firebase 🔥 (Auth, Firestore, Storage)
+- Provider / Riverpod (your choice)
+- REST API (if using external backend)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# T_Store
+## 📸 Screenshots
+
+| Home | Product Details | Cart |
+|------|------------------|------|
+| ![Home](assets/screenshots/home.png) | ![Details](assets/screenshots/details.png) | ![Cart](assets/screenshots/cart.png) |
+
+> Put your screenshots in the `assets/screenshots/` folder and replace the filenames if needed.
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/your-username/t-store.git
+cd t-store
+flutter pub get
+flutter run
