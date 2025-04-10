@@ -20,7 +20,7 @@ Smooth UI, fast performance, and a design that hits harder than your ex’s last
 
 | Home | Product Details | Cart |
 |------|------------------|------|
-| ![Home](assets/screenshots/home.png) | ![Details](assets/screenshots/details.png) | ![Cart](assets/screenshots/cart.png) |
+| ![Home](assets/screen/home.png) | ![Details](assets/screen/detail.png) | ![Cart](assets/screen/cart.png) |
 
 > Put your screenshots in the `assets/screenshots/` folder and replace the filenames if needed.
 
