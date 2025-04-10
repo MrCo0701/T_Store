@@ -27,7 +27,6 @@ Smooth UI, fast performance, and a design that hits harder than your ex’s last
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/t-store.git
 cd t-store
 flutter pub get
 flutter run
