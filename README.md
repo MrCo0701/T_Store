@@ -15,8 +15,6 @@ Smooth UI, fast performance, and a design that hits harder than your ex’s last
 
 - Flutter 💙 (Dart)
 - Firebase 🔥 (Auth, Firestore, Storage)
-- Provider / Riverpod (your choice)
-- REST API (if using external backend)
 
 ## 📸 Screenshots
 
