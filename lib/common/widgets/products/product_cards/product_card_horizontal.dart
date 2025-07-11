@@ -67,9 +67,7 @@ class TProductCardHorizontal extends StatelessWidget {
 
                 //* Favorite Icon Button
                 const Positioned(
-                  top: 0,
-                  right: 0,
-                  child: FavouriteIcon())
+                    top: 0, right: 0, child: FavouriteIcon(productId: ''))
               ],
             ),
           ),
@@ -93,9 +91,7 @@ class TProductCardHorizontal extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 const Spacer(),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

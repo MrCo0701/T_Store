@@ -25,7 +25,7 @@ class TProductImageSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark  = THelperFunctions.isDarkMode(context);
+    final dark = THelperFunctions.isDarkMode(context);
     final controller = Get.put(ImageController());
     final images = controller.getAllProductImages(product);
 
@@ -66,19 +66,26 @@ class TProductImageSlider extends StatelessWidget {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: const AlwaysScrollableScrollPhysics(),
-                    itemBuilder: (_, index) => Obx(() {
+                    itemBuilder: (_, index) =>
+                        Obx(() {
                           final imageSelected =
-                              controller.selectedProductImage.value == images[index];
+                              controller.selectedProductImage.value ==
+                                  images[index];
 
                           return TRoundedImage(
                             imageUrl: images[index],
                             width: 80,
-                            backgroundColor: dark ? TColors.dark : TColors.white,
+                            backgroundColor:
+                            dark ? TColors.dark : TColors.white,
                             isNetworkImage: true,
                             border: Border.all(
-                                color: imageSelected ? TColors.primary : Colors.transparent),
+                                color: imageSelected
+                                    ? TColors.primary
+                                    : Colors.transparent),
                             padding: const EdgeInsets.all(TSizes.sm),
-                            onPressed: () => controller.selectedProductImage.value = images[index],
+                            onPressed: () =>
+                            controller
+                                .selectedProductImage.value = images[index],
                           );
                         }),
                     separatorBuilder: (_, __) =>
@@ -88,10 +95,12 @@ class TProductImageSlider extends StatelessWidget {
             ),
 
             // * Appbar Icons
-            const TAppBar(
+            TAppBar(
               showBackArrow: true,
               action: [
-                FavouriteIcon()
+                FavouriteIcon(
+                  productId: product.id,
+                )
               ],
             )
           ],

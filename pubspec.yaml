@@ -38,6 +38,7 @@ dependencies:
 
 # -------------------- PACKAGES END --------------------#
 
+  path_provider: ^2.1.5
   iconsax: any
   get: any
   smooth_page_indicator: any
@@ -48,17 +49,20 @@ dependencies:
   get_storage: any
   intl: any
   cloud_firestore: ^4.17.5
-  google_sign_in: ^6.2.2
+  google_sign_in: ^6.3.0
   shimmer: ^3.0.0 # ==> Hieu ung cac phan tu sang trang khi dang load trang
-  image_picker: ^1.1.2 # ==>
+  image_picker: ^1.1.2
+#  image_picker_plus: ^0.5.9
   firebase_storage: ^11.7.7
   cached_network_image: ^3.4.0
   uuid: ^4.5.1
   firebase_app_check: ^0.2.2+7 # ==> app beck for fix exception
+  flutter_plugin_android_lifecycle: ^2.0.28
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # Utility Packages
   http: ^1.2.1
@@ -136,3 +140,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+dependency_overrides:
+  path_provider_android: ^2.2.16
+  url_launcher_android: ^6.3.10

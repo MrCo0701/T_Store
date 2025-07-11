@@ -60,7 +60,7 @@ class TProductCardVertical extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
-                        '25%',
+                        '$salePercentage%',
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge
@@ -70,10 +70,10 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   //* Favorite Icon Button
-                  const Positioned(
+                  Positioned(
                     top: 0,
                     right: 0,
-                    child: FavouriteIcon(),
+                    child: FavouriteIcon(productId: product.id),
                   )
                 ],
               ),

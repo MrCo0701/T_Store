@@ -167,5 +167,6 @@ class TImages {
   static String cartAnimation = "assets/images/animations/lady-adding-product-in-cart-animation.json";
   static String successfulRegisterAnimation = "assets/images/animations/72462-check-register.json";
   static String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+  static String emptyAnimation = "assets/images/animations/empty_animation.json";
 }
 

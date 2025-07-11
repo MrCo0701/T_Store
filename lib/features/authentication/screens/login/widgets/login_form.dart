@@ -78,11 +78,12 @@ class TLoginForm extends StatelessWidget {
 
               const SizedBox(height: TSizes.spaceBtwSections),
 
+              // * Login
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => controller.emailAndPasswordSignIn(), child: const Text(TTexts
-                    .signIn)),
+                    onPressed: () => controller.emailAndPasswordSignIn(),
+                    child: const Text(TTexts.signIn)),
               ),
               const SizedBox(height: TSizes.spaceBtwSections - 10),
               SizedBox(

@@ -33,25 +33,29 @@ class TVerticalImageText extends StatelessWidget {
         child: Column(
           children: [
             //* Image
-            TCircularImage(image: image,
-              fit: BoxFit.fitWidth,
-              padding: TSizes.sm * 1.4,
-              isNetworkImage: isNetworkImage,
-              backgroundColor: backgroundColor,
-              overlayColor: THelperFunctions.isDarkMode(context) ? TColors.light : TColors.dark,
+            Expanded(
+              child: TCircularImage(image: image,
+                fit: BoxFit.fitWidth,
+                padding: TSizes.sm * 1.4,
+                isNetworkImage: isNetworkImage,
+                backgroundColor: backgroundColor,
+                overlayColor: THelperFunctions.isDarkMode(context) ? TColors.light : TColors.dark,
+              ),
             ),
 
             //* Text
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            SizedBox(
-              width: 55,
-              child: Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium!
-                    .apply(color: TColors.white),
-                overflow: TextOverflow.ellipsis,
+            Center(
+              child: SizedBox(
+                width: 55,
+                child: Text(
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium!
+                      .apply(color: TColors.white),
+                  overflow: TextOverflow.ellipsis
+                ),
               ),
             )
           ],

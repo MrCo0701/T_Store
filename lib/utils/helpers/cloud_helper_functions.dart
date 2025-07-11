@@ -24,7 +24,7 @@ class TCloudHelperFunctions {
       Widget? loader,
       Widget? error,
       Widget? nothingFound}) {
-      if (snapshot.connectionState == ConnectionState.waiting) {
+    if (snapshot.connectionState == ConnectionState.waiting) {
       if (loader != null) return loader;
       return const Center(child: CircularProgressIndicator());
     }
