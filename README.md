@@ -22,8 +22,6 @@ Smooth UI, fast performance, and a design that hits harder than your ex’s last
 |------|------------------|------|------|
 | ![Home](assets/screen/home2.jpeg) | ![Details](assets/screen/detail.png) | ![Cart](assets/screen/cart.png) | ![Login](assets/screen/login.png) |
 
-> Put your screenshots in the `assets/screenshots/` folder and replace the filenames if needed.
-
 ## 🚀 Getting Started
 
 ```bash
