@@ -39,8 +39,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     prefixIcon: Icon(Iconsax.mobile),
                     labelText: 'Phone Number',
                   ),
-                  validator: (value) =>
-                      TValidator.validatePhoneNumber(value),
+                  validator: (value) => TValidator.validatePhoneNumber(value),
                 ),
                 const SizedBox(height: TSizes.spaceBtwInputFields),
                 Row(
@@ -52,8 +51,7 @@ class AddNewAddressScreen extends StatelessWidget {
                             prefixIcon: Icon(Iconsax.building_31),
                             labelText: 'Street',
                             labelStyle: TextStyle(fontSize: 14)),
-                        validator: (value) =>
-                            TValidator.validatorEmptyText(value),
+                        validator: (value) => TValidator.validatorEmptyText(value),
                       ),
                     ),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
@@ -64,8 +62,7 @@ class AddNewAddressScreen extends StatelessWidget {
                             prefixIcon: Icon(Iconsax.code),
                             labelText: 'Postal Code',
                             labelStyle: TextStyle(fontSize: 14)),
-                        validator: (value) =>
-                            TValidator.validatorEmptyText(value),
+                        validator: (value) => TValidator.validatorEmptyText(value),
                       ),
                     )
                   ],
@@ -77,11 +74,8 @@ class AddNewAddressScreen extends StatelessWidget {
                       child: TextFormField(
                         controller: controller.city,
                         decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.building),
-                            labelText: 'City',
-                            labelStyle: TextStyle(fontSize: 14)),
-                        validator: (value) =>
-                            TValidator.validatorEmptyText(value),
+                            prefixIcon: Icon(Iconsax.building), labelText: 'City', labelStyle: TextStyle(fontSize: 14)),
+                        validator: (value) => TValidator.validatorEmptyText(value),
                       ),
                     ),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
@@ -92,8 +86,7 @@ class AddNewAddressScreen extends StatelessWidget {
                             prefixIcon: Icon(Iconsax.activity),
                             labelText: 'State',
                             labelStyle: TextStyle(fontSize: 14)),
-                        validator: (value) =>
-                            TValidator.validatorEmptyText(value),
+                        validator: (value) => TValidator.validatorEmptyText(value),
                       ),
                     )
                   ],

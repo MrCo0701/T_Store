@@ -3,6 +3,8 @@ import 'package:t_store/features/shop/controllers/product%20/image_controller.da
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/features/shop/models/product_variation_model.dart';
 
+import 'cart_controller.dart';
+
 class VariationController extends GetxController {
   static VariationController get instance => Get.find();
 
@@ -19,6 +21,12 @@ class VariationController extends GetxController {
         (variation) => _isSameAttributeValues(variation.attributeValues, selectedAttributes),
         orElse: () => ProductVariationModel.empty());
 
+    if (selectedVariation.id.isNotEmpty) {
+      final cartController = CartController.instance;
+      cartController.productQuantityInCart.value =
+          cartController.getVariationQuantityInCart(product.id, selectedVariation.id);
+    }
+
     if (selectedVariation.image.isNotEmpty) {
       ImageController.instance.selectedProductImage.value = selectedVariation.image;
     } else {
@@ -27,8 +35,7 @@ class VariationController extends GetxController {
     this.selectedVariation.value = selectedVariation;
   }
 
-  bool _isSameAttributeValues(
-      Map<String, dynamic> variationAttributes, Map<String, dynamic> selectedAttributes) {
+  bool _isSameAttributeValues(Map<String, dynamic> variationAttributes, Map<String, dynamic> selectedAttributes) {
     if (variationAttributes.length != selectedAttributes.length) return false;
 
     for (final key in variationAttributes.keys) {
@@ -39,8 +46,7 @@ class VariationController extends GetxController {
 
   Set<String?> getAttributesAvailabilityInVariation(List<ProductVariationModel> variations, String attributeName) {
     final availableVariationAttributeValues = variations
-        .where((variation) =>
-            variation.attributeValues[attributeName]!.isNotEmpty && variation.stock > 0)
+        .where((variation) => variation.attributeValues[attributeName]!.isNotEmpty && variation.stock > 0)
         .map((variation) => variation.attributeValues[attributeName])
         .toSet();
 
@@ -52,9 +58,7 @@ class VariationController extends GetxController {
   }
 
   String getVariationPrice() {
-    return (selectedVariation.value.salePrice > 0
-            ? selectedVariation.value.salePrice
-            : selectedVariation.value.price)
+    return (selectedVariation.value.salePrice > 0 ? selectedVariation.value.salePrice : selectedVariation.value.price)
         .toString();
   }
 

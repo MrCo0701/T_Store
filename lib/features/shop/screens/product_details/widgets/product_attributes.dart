@@ -34,6 +34,7 @@ class TProductAttributes extends StatelessWidget {
                 children: [
                   //* Title, Price and Stock status
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const TSectionHeading(title: 'Variation', showActionButton: false),
                       const SizedBox(width: TSizes.spaceBtwSections),
@@ -56,26 +57,26 @@ class TProductAttributes extends StatelessWidget {
                           ),
 
                           //* Stock
-                          Row(
-                            children: [
-                              const TProductTitleText(title: 'Stock :', smallSize: true),
-                              Text(
-                                controller.variationStackStatus.value,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              )
-                            ],
-                          )
+                          // Row(
+                          //   children: [
+                          //     const TProductTitleText(title: 'Stock :', smallSize: true),
+                          //     Text(
+                          //       controller.variationStackStatus.value,
+                          //       style: Theme.of(context).textTheme.titleMedium,
+                          //     )
+                          //   ],
+                          // )
                         ],
                       )
                     ],
                   ),
 
-                  // * Variation Description
-                  TProductTitleText(
-                    title: controller.selectedVariation.value.description ?? '',
-                    smallSize: true,
-                    maxLines: 4,
-                  )
+                  // // * Variation Description
+                  // TProductTitleText(
+                  //   title: controller.selectedVariation.value.description ?? '',
+                  //   smallSize: true,
+                  //   maxLines: 4,
+                  // )
                 ],
               ),
             ),
@@ -94,12 +95,9 @@ class TProductAttributes extends StatelessWidget {
                             () => Wrap(
                                 spacing: 8,
                                 children: attribute.values!.map((attributeValue) {
-                                  final isSelected =
-                                      controller.selectedAttributes[attribute.name] ==
-                                          attributeValue;
+                                  final isSelected = controller.selectedAttributes[attribute.name] == attributeValue;
                                   final available = controller
-                                      .getAttributesAvailabilityInVariation(
-                                          product.productVariations!, attribute.name!)
+                                      .getAttributesAvailabilityInVariation(product.productVariations!, attribute.name!)
                                       .contains(attributeValue);
 
                                   return TChoiceChip(

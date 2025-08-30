@@ -30,8 +30,7 @@ class AllProduct extends StatelessWidget {
               future: futureMethod ?? controller.fetchProductsByQuery(query),
               builder: (context, snapshot) {
                 const loader = TVerticalProductShimmer();
-                final widget =
-                    TCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader);
+                final widget = TCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader);
 
                 if (widget != null) return widget;
 
@@ -43,5 +42,3 @@ class AllProduct extends StatelessWidget {
     );
   }
 }
-
-

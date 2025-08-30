@@ -36,7 +36,7 @@ class Store extends StatelessWidget {
             'Store',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          action: [TCartCounterIcon(onPressed: () {}, iconColor: Colors.black)],
+          action: [TCartCounterIcon(iconColor: Colors.black)],
         ),
         body: NestedScrollView(
           // * ==> Dung de kiem soat nhung scroll view de khong bi xung dot nhau
