@@ -4,7 +4,7 @@ import 'package:t_store/common/widgets/custom_shapes/containers/rounded_containe
 import 'package:t_store/common/widgets/texts/product_price_text.dart';
 import 'package:t_store/common/widgets/texts/product_title_text.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/shop/controllers/product%20/variation_controller.dart';
+import 'package:t_store/features/shop/controllers/product/variation_controller.dart';
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -55,28 +55,10 @@ class TProductAttributes extends StatelessWidget {
                               TProductPriceText(price: controller.getVariationPrice())
                             ],
                           ),
-
-                          //* Stock
-                          // Row(
-                          //   children: [
-                          //     const TProductTitleText(title: 'Stock :', smallSize: true),
-                          //     Text(
-                          //       controller.variationStackStatus.value,
-                          //       style: Theme.of(context).textTheme.titleMedium,
-                          //     )
-                          //   ],
-                          // )
                         ],
                       )
                     ],
                   ),
-
-                  // // * Variation Description
-                  // TProductTitleText(
-                  //   title: controller.selectedVariation.value.description ?? '',
-                  //   smallSize: true,
-                  //   maxLines: 4,
-                  // )
                 ],
               ),
             ),

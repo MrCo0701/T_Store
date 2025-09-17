@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:t_store/features/shop/controllers/product%20/image_controller.dart';
+import 'package:t_store/features/shop/controllers/product/image_controller.dart';
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/features/shop/models/product_variation_model.dart';
 
@@ -27,20 +27,19 @@ class VariationController extends GetxController {
           cartController.getVariationQuantityInCart(product.id, selectedVariation.id);
     }
 
-    if (selectedVariation.image.isNotEmpty) {
-      ImageController.instance.selectedProductImage.value = selectedVariation.image;
-    } else {
-      // ImageController.instance.selectedProductImage.value =
-    }
+    // if (selectedVariation.image.isNotEmpty) {
+    //   ImageController.instance.selectedProductImage.value = selectedVariation.image;
+    // }
+
     this.selectedVariation.value = selectedVariation;
   }
 
   bool _isSameAttributeValues(Map<String, dynamic> variationAttributes, Map<String, dynamic> selectedAttributes) {
     if (variationAttributes.length != selectedAttributes.length) return false;
 
-    for (final key in variationAttributes.keys) {
-      if (variationAttributes[key] != selectedAttributes[key]) return false;
-    }
+    // for (final key in variationAttributes.keys) {
+    if (variationAttributes['Color'] != selectedAttributes['Color']) return false;
+    // }
     return true;
   }
 

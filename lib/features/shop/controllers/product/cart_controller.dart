@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:t_store/features/shop/controllers/product%20/variation_controller.dart';
+import 'package:t_store/features/shop/controllers/product/variation_controller.dart';
 import 'package:t_store/features/shop/models/cart_item_model.dart';
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/utils/enum/enum.dart';
@@ -32,15 +32,15 @@ class CartController extends GetxController {
       return;
     }
 
-    if (product.productType == ProductType.variable.toString()) {
-      TLoaders.warningSnackBar(title: 'Oh snap!', message: 'Selected variation is out of stock.');
+    // if (product.productType == ProductType.variable.toString()) {
+    //   TLoaders.warningSnackBar(title: 'Oh snap!', message: 'Selected variation is out of stock.');
+    //   return;
+    // } else {
+    if (product.stock < 1) {
+      TLoaders.warningSnackBar(title: 'Oh Snap!', message: 'Selected Product is out of stock');
       return;
-    } else {
-      if (product.stock < 1) {
-        TLoaders.warningSnackBar(title: 'Oh Snap!', message: 'Selected Product is out of stock');
-        return;
-      }
     }
+    // }
 
     final selectedCartItem = convertToCartItem(product, productQuantityInCart.value);
 
@@ -117,7 +117,7 @@ class CartController extends GetxController {
         productId: product.id,
         title: product.title,
         price: price,
-        image: isVariation ? variation.image : product.thumbnail,
+        image: product.thumbnail, // isVariation ? variation.image : product.thumbnail,
         quantity: quantity,
         variationId: variation.id,
         brandName: product.brand != null ? product.brand!.name : '',

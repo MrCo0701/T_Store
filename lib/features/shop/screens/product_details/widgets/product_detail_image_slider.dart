@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/products/favourite_icon/favourite_icon.dart';
-import 'package:t_store/features/shop/controllers/product%20/image_controller.dart';
+import 'package:t_store/features/shop/controllers/product/image_controller.dart';
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 

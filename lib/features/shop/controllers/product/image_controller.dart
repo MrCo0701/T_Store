@@ -10,7 +10,7 @@ class ImageController extends GetxController {
   RxString selectedProductImage = ''.obs;
 
   List<String> getAllProductImages(ProductModel product) {
-    Set<String> images = {}; // Set almost similar with List or Map, but values in here is only
+    Set<String> images = {};
     images.add(product.thumbnail);
 
     selectedProductImage.value = product.thumbnail;
@@ -19,9 +19,9 @@ class ImageController extends GetxController {
       images.addAll(product.images!);
     }
 
-    // if (product.productVariations != null || product.productVariations!.isNotEmpty) {
-    //   images.addAll(product.productVariations!.map((e) => e.image));
-    // }
+    if (product.productVariations != null || product.productVariations!.isNotEmpty) {
+      images.addAll(product.productVariations!.map((e) => e.image));
+    }
     return images.toList();
   }
 

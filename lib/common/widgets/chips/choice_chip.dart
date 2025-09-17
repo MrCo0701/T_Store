@@ -20,16 +20,15 @@ class TChoiceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = THelperFunctions.getColor(text);
     final isColor = color != null;
+    final isDark = THelperFunctions.isDarkMode(context);
 
     return Theme(
       data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
       child: ChoiceChip(
-        label: color != null
-            ? const SizedBox()
-            : Text(text),
+        label: color != null ? const SizedBox() : Text(text),
         selected: selected,
         onSelected: onSelected,
-        labelStyle: const TextStyle(color: TColors.white),
+        labelStyle: TextStyle(color: isDark ? TColors.white : TColors.black),
         avatar: color != null
             ? const TCircularContainer(
                 width: 50,

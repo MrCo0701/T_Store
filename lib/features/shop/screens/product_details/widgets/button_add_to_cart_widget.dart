@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/features/shop/controllers/product%20/cart_controller.dart';
+import 'package:t_store/features/shop/controllers/product/cart_controller.dart';
 import 'package:t_store/features/shop/models/product_model.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -36,7 +36,7 @@ class TBottomAddToCart extends StatelessWidget {
                 children: [
                   TCircularIcon(
                     icon: Iconsax.minus,
-                    backgroundColor: TColors.darkGrey,
+                    backgroundColor: controller.productQuantityInCart.value < 1 ? TColors.darkGrey : TColors.black,
                     width: 40,
                     height: 40,
                     onPressed: () =>
