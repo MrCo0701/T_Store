@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/success_screen/success_screen.dart';
-import 'package:t_store/features/shop/screens/cart/widgets%20/cart_item.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:t_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
@@ -14,6 +13,7 @@ import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
+import '../cart/widgets/cart_item.dart';
 
 class CheckOutScreen extends StatelessWidget {
   const CheckOutScreen({super.key});

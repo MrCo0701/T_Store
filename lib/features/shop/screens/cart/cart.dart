@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/features/shop/controllers/product/cart_controller.dart';
-import 'package:t_store/features/shop/screens/cart/widgets%20/cart_item.dart';
+import 'package:t_store/features/shop/screens/cart/widgets/cart_item.dart';
 import 'package:t_store/features/shop/screens/checkout/checkout.dart';
 import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
